@@ -1,0 +1,6 @@
+{
+  "name": "Minha Assessoria",
+  "description": "Aplicativo pessoal de acompanhamento, prescrição e evolução para corredores.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
