@@ -160,6 +160,24 @@ export const HomeView: React.FC<HomeViewProps> = ({
         </div>
       </div>
 
+      {/* QUADRO DE ALERTA DE SEGURANÇA E PRIVACIDADE */}
+      <div
+        id="security-alert-box"
+        className="p-3.5 sm:p-4 bg-red-950/40 border border-red-500/40 rounded-2xl flex items-start space-x-3 text-red-200 text-xs shadow-md"
+      >
+        <div className="w-8 h-8 rounded-xl bg-red-500/20 border border-red-500/40 flex items-center justify-center text-red-400 shrink-0 mt-0.5">
+          <ShieldAlert className="w-4 h-4 text-red-400" />
+        </div>
+        <div className="space-y-1">
+          <span className="font-black text-red-400 uppercase tracking-wide text-[11px] font-mono block">
+            AVISO DE SEGURANÇA & USO PESSOAL
+          </span>
+          <p className="text-[11.5px] leading-relaxed text-red-100/90">
+            Não compartilhe o link deste app com outras pessoas. Risco de compartilhamento de dados pessoais e de saúde. Acesso individual e intransferível, mantenha-se seguro!
+          </p>
+        </div>
+      </div>
+
       {/* 2. CARD DO TOPO: TESTE DE VO2 (ITEM OBRIGATÓRIO DA ASSESSORIA) */}
       {!hasVO2Test ? (
         /* PENDING VO2 TEST HERO CARD (CRITICAL REQUIREMENT) */
