@@ -58,7 +58,7 @@ export default function App() {
       if (p) {
         setProfile(p);
         let activeP = await getActivePlan();
-        if (!activeP) {
+        if (!activeP || activeP.totalWeeks !== 4) {
           const latestT = await getLatestVO2Test();
           activeP = generateMacrocyclePlan(p, latestT ?? undefined);
           await saveActivePlan(activeP);

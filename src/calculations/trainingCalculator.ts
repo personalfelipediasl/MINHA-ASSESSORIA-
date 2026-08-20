@@ -872,6 +872,11 @@ export function generateWeeklyMicrocycle(
     else if (fraction <= 0.70) phaseName = 'Desenvolvimento';
     else if (fraction <= 0.90) phaseName = 'Específica';
     else phaseName = 'Polimento / Taper';
+  } else if (totalWeeks === 4) {
+    if (weekNumber === 1) phaseName = 'Base';
+    else if (weekNumber === 2) phaseName = 'Desenvolvimento';
+    else if (weekNumber === 3) phaseName = 'Específica';
+    else phaseName = 'Polimento / Taper';
   } else {
     phaseName = weekNumber === totalWeeks ? 'Polimento / Taper' : 'Desenvolvimento';
   }
@@ -1014,16 +1019,8 @@ export function createTrainingPlan(
   refVo2max?: number,
   refSpeedKmH?: number
 ): TrainingPlan {
-  let totalWeeks = 8;
-  if (profile.hasTargetDate && profile.targetDate) {
-    const today = new Date();
-    const target = new Date(profile.targetDate);
-    const diffMs = target.getTime() - today.getTime();
-    const diffWeeks = Math.ceil(diffMs / (1000 * 60 * 60 * 24 * 7));
-    if (diffWeeks >= 4) {
-      totalWeeks = Math.min(24, diffWeeks);
-    }
-  }
+  // Plan standardized to 4 weeks (monthly mesocycle for monthly VO2 re-evaluations)
+  const totalWeeks = 4;
 
   const baseVolume = getBaselineWeeklyVolume(profile);
   const effectiveRefSpeed = refSpeedKmH && refSpeedKmH > 0 ? refSpeedKmH : 10.0;
