@@ -138,6 +138,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#000000] text-[#FFFFFF] font-sans antialiased selection:bg-[#FF5500] selection:text-black">
+      {/* Barra superior preta de proteção contra a barra de status do smartphone (iOS e Android) */}
+      <div id="mobile-status-bar-shield" className="mobile-status-bar-shield" aria-hidden="true" />
+
       {/* Top and Bottom Shell Navigation */}
       <Navigation
         currentTab={activeTab}
@@ -148,7 +151,7 @@ export default function App() {
       />
 
       {/* Main Tab Views */}
-      <main className="min-h-screen">
+      <main className="min-h-screen main-safe-top">
         {activeTab === 'home' && (
           <HomeView
             profile={profile}
@@ -243,7 +246,7 @@ export default function App() {
       {/* VO2 Test Hub Modal */}
       {showVO2TestHub && (
         <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md overflow-y-auto">
-          <div className="p-4 flex justify-end max-w-xl mx-auto">
+          <div className="p-4 pt-[max(env(safe-area-inset-top,0px),1rem)] flex justify-end max-w-xl mx-auto">
             <button
               onClick={() => setShowVO2TestHub(false)}
               className="py-1.5 px-3 bg-[#1c1c1c] text-xs font-bold text-white rounded-xl border border-[#2a2a2a]"

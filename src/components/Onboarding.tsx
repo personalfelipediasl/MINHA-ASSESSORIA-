@@ -132,7 +132,10 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
   };
 
   return (
-    <div className="min-h-screen bg-[#000000] text-white flex flex-col justify-between p-4 md:p-8 max-w-xl mx-auto">
+    <div className="min-h-screen bg-[#000000] text-white flex flex-col justify-between p-4 pt-[max(env(safe-area-inset-top,0px),1.5rem)] md:p-8 max-w-xl mx-auto">
+      {/* Barra superior preta de proteção contra a barra de status */}
+      <div className="mobile-status-bar-shield" aria-hidden="true" />
+
       {/* Progress Bar */}
       {step > 0 && (
         <div className="w-full mb-6">

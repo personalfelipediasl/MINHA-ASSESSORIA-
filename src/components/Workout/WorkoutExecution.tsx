@@ -131,7 +131,7 @@ export const WorkoutExecution: React.FC<WorkoutExecutionProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#000000] text-white flex flex-col justify-between p-4 md:p-8 select-none">
+    <div className="fixed inset-0 z-50 bg-[#000000] text-white flex flex-col justify-between p-4 pt-[max(env(safe-area-inset-top,0px),1.25rem)] pb-[max(env(safe-area-inset-bottom,0px),1rem)] md:p-8 select-none">
       {/* Top Header */}
       <div className="flex items-center justify-between">
         <div>
