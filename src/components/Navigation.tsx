@@ -27,7 +27,7 @@ export const Navigation: React.FC<NavigationProps> = ({
       {/* Mobile Bottom Navigation */}
       <nav
         id="mobile-nav"
-        className="fixed bottom-0 left-0 right-0 z-40 bg-[#111111]/95 backdrop-blur-md border-t border-[#222222] md:hidden pb-safe"
+        className="mobile-bottom-nav md:hidden"
       >
         <div className="flex items-center justify-around h-16 max-w-lg mx-auto px-2">
           {tabs.map((tab) => {
